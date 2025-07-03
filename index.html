@@ -1,19 +1,57 @@
-
 <!DOCTYPE html>
-<html lang='es'>
+<html lang="es">
 <head>
-<meta charset='UTF-8'>
-<title>Dólar Blue</title>
-<style>
-body,html { margin:0; padding:0; height:100%; overflow:hidden; }
-#bgvideo { position:fixed; top:0; left:0; min-width:100%; min-height:100%; z-index:-1; object-fit:cover; }
-#price { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:#fff; font-size:6vw; font-family:Arial,sans-serif; text-shadow:0 0 10px #000; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apoyo al Deportista Amateur</title>
+  <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <script defer src="js/main.js"></script>
 </head>
 <body>
-<video id='bgvideo' autoplay muted loop>
-<source src='https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.mp4' type='video/mp4'>
-</video>
-<div id='price'>Compra: $1155,00 | Venta: $1175,00</div>
+  <h1 class="mdc-typography--headline4">Apoyo al Deportista Amateur</h1>
+  
+  <section class="section" id="mood-tracker">
+    <h2 class="mdc-typography--headline5">Registro Diario de Emociones</h2>
+    <div id="emotion-buttons">
+      <button class="mdc-button emotion-button" data-emotion="Ansiedad">Ansiedad</button>
+      <button class="mdc-button emotion-button" data-emotion="Estrés">Estrés</button>
+      <button class="mdc-button emotion-button" data-emotion="Tristeza">Tristeza</button>
+      <button class="mdc-button emotion-button" data-emotion="Miedo">Miedo</button>
+      <button class="mdc-button emotion-button" data-emotion="Rabia/Ira">Rabia/Ira</button>
+      <button class="mdc-button emotion-button" data-emotion="Desánimo">Desánimo</button>
+      <button class="mdc-button emotion-button" data-emotion="Inseguridad">Inseguridad</button>
+      <button class="mdc-button emotion-button" data-emotion="Frustración">Frustración</button>
+    </div>
+    <div class="mdc-text-field mdc-text-field--textarea" style="margin-top:16px;">
+      <textarea id="emotion-note" class="mdc-text-field__input" rows="3" placeholder="Escribe una nota opcional..."></textarea>
+    </div>
+    <button id="save-emotion" class="mdc-button mdc-button--raised" style="margin-top:16px;">Guardar Emoción</button>
+    <div id="emotion-history" style="margin-top:16px;"></div>
+  </section>
+
+  <section class="section" id="breathing-exercises">
+    <h2 class="mdc-typography--headline5">Ejercicios de Respiración</h2>
+    <div class="exercise mdc-card" style="padding:16px;">
+      <h3 class="mdc-typography--subtitle1">Respiración Profunda para la Ansiedad</h3>
+      <audio src="audio/respiracion-1.mp3"></audio>
+      <button class="mdc-icon-button material-icons play-button">play_arrow</button>
+    </div>
+    <div class="exercise mdc-card" style="padding:16px; margin-top:8px;">
+      <h3 class="mdc-typography--subtitle1">Relajación Rápida antes de Competir</h3>
+      <audio src="audio/relajacion-corta.mp3"></audio>
+      <button class="mdc-icon-button material-icons play-button">play_arrow</button>
+    </div>
+  </section>
+
+  <section class="section" id="achievements">
+    <h2 class="mdc-typography--headline5">Registro de Logros y Fortalezas</h2>
+    <div class="mdc-text-field mdc-text-field--textarea">
+      <textarea id="achievement-text" class="mdc-text-field__input" rows="3" placeholder="Comparte tus logros o aprendizajes..."></textarea>
+    </div>
+    <button id="save-achievement" class="mdc-button mdc-button--raised" style="margin-top:16px;">Guardar Logro</button>
+    <div id="achievement-list" style="margin-top:16px;"></div>
+  </section>
 </body>
 </html>
